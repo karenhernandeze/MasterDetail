@@ -27,23 +27,26 @@ class DetailViewController: UIViewController {
         
     }
     
-    func configureView() {
-        //Update the user interface for the detail item
-        if let detailBook = detailItem {
-            myBook = detailBook
-            titleLabel.text = myBook.title
-            authorLabel.text = myBook.author
-            descriptionTextView.text = myBook.description
-            //yearLabel.text = String(myBook.year)
-            pagesLabel.text = String(myBook.pages)
-            
-            if myBook.readThisBook {
-                readSwitch.isOn = true
-            } else {
-                readSwitch.isOn = false
+    func configureView(){
+            //Update the user interface for the detail item
+            readSwitch.isEnabled = false;
+            if let detailBook = detailItem {
+                myBook = detailBook
+                titleLabel.text = myBook.title
+                authorLabel.text = myBook.author
+                descriptionTextView.text = myBook.description
+//                yearLabel.text = String(myBook.year)
+                pagesLabel.text = String(myBook.pages)
+                
+                if myBook.readThisBook {
+                    readSwitch.isOn = true
+                } else {
+                    readSwitch.isOn = false
+                }
+
+                
             }
         }
-    }
     
     var detailItem : Book? {
         didSet {

@@ -52,7 +52,7 @@ class AddViewController: UIViewController {
                 switchOutlet.isOn = false
             }
             
-        }
+        } 
         // Do any additional setup after loading the view.
     }
     
